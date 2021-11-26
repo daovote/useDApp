@@ -10,36 +10,36 @@ export function TopBar() {
       <HeaderContainer>
         <HeaderNav>
           <ToMain href="/">
-            <span>useDapp</span>
+            <span>SuperDonkey</span>
             <ToMainBottom>
-              Ethereum <Handshaking>🤝</Handshaking> React
+              Yogafire<Handshaking>🤝</Handshaking> Donkey
             </ToMainBottom>
           </ToMain>
           <HeaderNavLinks>
-            <HeaderLink activeClassName="active-page" to="/balance">
-              {' '}
-              Balance{' '}
-            </HeaderLink>
-            <HeaderLink activeClassName="active-page" to="/prices">
+           <HeaderLink activeClassName="active-page" to="/prices">
               {' '}
               Prices{' '}
-            </HeaderLink>
-            <HeaderLink activeClassName="active-page" to="/block">
-              {' '}
-              Block{' '}
             </HeaderLink>
             <HeaderLink activeClassName="active-page" to="/tokens">
               {' '}
               Tokens{' '}
             </HeaderLink>
-            <HeaderLink activeClassName="active-page" to="/send">
-              {' '}
-              Send Ether{' '}
-            </HeaderLink>
             <HeaderLink activeClassName="active-page" to="/transactions">
               {' '}
               Transactions{' '}
             </HeaderLink>
+             {/* <HeaderLink activeClassName="active-page" to="/balance">
+              {' '}
+              Balance{' '}
+            </HeaderLink> */}
+            {/* <HeaderLink activeClassName="active-page" to="/block">
+              {' '}
+              Block{' '}
+            </HeaderLink> */}
+            {/* <HeaderLink activeClassName="active-page" to="/send">
+              {' '}
+              Send Ether{' '}
+            </HeaderLink> */}
           </HeaderNavLinks>
         </HeaderNav>
       </HeaderContainer>

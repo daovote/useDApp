@@ -30,7 +30,7 @@ export const Sizes = {
 }
 
 export const Gradients = {
-  bodyBackground: `linear-gradient(180deg, ${Colors.Yellow[100]}, ${Colors.White})`,
+  bodyBackground: `linear-gradient(180deg, ${Colors.White}, ${Colors.Yellow[500]})`,
 }
 
 export const Transitions = {

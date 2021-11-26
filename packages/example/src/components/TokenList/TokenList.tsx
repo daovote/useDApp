@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { formatUnits } from '@ethersproject/units'
-import { ERC20Interface, useContractCalls, useEthers, useTokenList } from '@usedapp/core'
+import { ERC20Interface, useContractCalls, useEthers, useTokenList, useTokenBalance } from '@usedapp/core'
 import { Colors } from '../../global/styles'
 import { TextBold } from '../../typography/Text'
 import { TokenIcon } from './TokenIcon'
 import { toHttpPath } from '../../utils'
+import { BigNumber } from '@ethersproject/bignumber'
 
 const UNISWAP_DEFAULT_TOKEN_LIST_URI = 'https://gateway.ipfs.io/ipns/tokens.uniswap.org'
 
@@ -27,12 +28,25 @@ export function TokenList() {
   const { name, logoURI, tokens } = useTokenList(UNISWAP_DEFAULT_TOKEN_LIST_URI, chainId) || {}
   const balances = useTokensBalance(tokens, account)
 
+  const donkey_contract = '0x4576e6825b462b6916d2a41e187626e9090a92c6'
+  const balance = useTokenBalance(donkey_contract, account)
+
   return (
     <List>
       <ListTitleRow>
         <ListTitle>{name}</ListTitle>
         {logoURI && <ListLogo src={toHttpPath(logoURI)} alt={`${name} logo`} />}
       </ListTitleRow>
+      <TokenItem key={donkey_contract}>
+        <TokenIconContainer>
+          {'https://assets.coingecko.com/coins/images/18257/small/Donkey_Logo_CMC.png?1631154862' 
+          && 
+          <TokenIcon src={'https://assets.coingecko.com/coins/images/18257/small/Donkey_Logo_CMC.png?1631154862'} alt={`${'DON'} logo`} />}
+        </TokenIconContainer>
+        <TokenName>{'Donkey'}</TokenName>
+        <TokenTicker>{'DON'}</TokenTicker>
+        <TokenBalance> {balance && formatUnits(balance)} </TokenBalance>
+      </TokenItem>
       {tokens &&
         tokens.map((token, idx) => (
           <TokenItem key={token.address}>

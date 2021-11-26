@@ -19,13 +19,13 @@ export function App() {
       <BrowserRouter>
         <TopBar />
         <Switch>
-          <Route exact path="/balance" component={Balance} />
+          {/* <Route exact path="/balance" component={Balance} /> */}
           <Route exact path="/prices" component={Prices} />
-          <Route exact path="/block" component={Block} />
+          {/* <Route exact path="/block" component={Block} /> */}
           <Route exact path="/tokens" component={Tokens} />
-          <Route exact path="/send" component={SendEtherPage} />
+          {/* <Route exact path="/send" component={SendEtherPage} /> */}
           <Route exact path="/transactions" component={Transactions} />
-          <Redirect exact from="/" to="/balance" />
+          <Redirect exact from="/" to="/prices" />
         </Switch>
       </BrowserRouter>
       <NotificationsList />
